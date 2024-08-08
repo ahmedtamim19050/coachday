@@ -18,7 +18,7 @@
                         <div class="mb-4 w-100">
                             <label class="form-label mb-2" for="register-email">E-Mail Adresse</label>
                             <input class="form-control  @error('name') is-invalid @enderror" name="email"
-                                type="email" id="email" placeholder="Geben sie ihre E-Mail Adresse ein"
+                                type="email" id="email" value="{{old('email')}}" placeholder="Geben sie ihre E-Mail Adresse ein"
                                  required />
 
                             @error('eamil')
