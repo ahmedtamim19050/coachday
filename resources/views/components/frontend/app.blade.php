@@ -41,6 +41,7 @@
         href="{{ asset('frontend-assets/files/flatpickr/dist/flatpickr.min.css?_v=20240806170230') }}" />
     <!-- Main Theme Styles + Bootstrap-->
     <link rel="stylesheet" href="{{ asset('frontend-assets/css/style.min.css?_v=20240806170230') }}" />
+    @stack('css')
 </head>
 <!-- Body-->
 
@@ -48,7 +49,7 @@
     <main class="page-wrapper">
         <x-frontend.header />
 
-        {{$slot}}
+        {{ $slot }}
 
     </main>
     <!-- Footer-->
@@ -75,7 +76,7 @@
     <script src="{{ asset('frontend-assets/files/boxicons/dist/boxicons.js?_v=20240806170230') }}"></script>
     <!-- Main theme script-->
     <script src="{{ asset('frontend-assets/js/app.min.js?_v=20240806170230') }}"></script>
-
+    @stack('js')
 
 </body>
 

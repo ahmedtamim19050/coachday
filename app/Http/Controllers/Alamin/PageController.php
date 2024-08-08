@@ -14,4 +14,13 @@ class PageController extends Controller
     public function registration(){
         return view('pages.registration');
     }
+    public function registration_coach(){
+        return view('pages.registration_coach');
+    }
+    public function checkout_coach(){
+        return view('pages.checkout_coach');
+    }
+    public function checkout_coachee(){
+        return view('pages.checkout_coachee');
+    }
 }
