@@ -72,17 +72,17 @@
                     <a href="{{ route('login') }}" class="dropdown-item">Login</a>
                   </li>
                   <li>
-                    <a href="/registrierung-coach.html" class="dropdown-item">Registrierung Coach</a>
+                    <a href="{{ route('registration_coach') }}" class="dropdown-item">Registrierung Coach</a>
                   </li>
                   <li>
                     <a href="{{ route('registration') }}" class="dropdown-item">Registrierung</a>
                   </li>
                   
                   <li>
-                    <a href="/checkout-coach.html" class="dropdown-item">Checkout Coach</a>
+                    <a href="{{ route('checkout_coach') }}" class="dropdown-item">Checkout Coach</a>
                   </li>
                   <li>
-                    <a href="/checkout-coachee.html" class="dropdown-item">Checkout Coachee</a>
+                    <a href="{{ route('checkout_coachee') }}" class="dropdown-item">Checkout Coachee</a>
                   </li>
                   <li>
                     <a href="/profil-coachee-buchungen.html" class="dropdown-item">Profil Coachee</a>

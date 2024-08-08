@@ -20,3 +20,6 @@ Route::get('test',function(){
 
 Route::get('login', [PageController::class, 'login'])->name('login');
 Route::get('registrierung', [PageController::class, 'registration'])->name('registration');
+Route::get('registrierung-coach', [PageController::class, 'registration_coach'])->name('registration_coach');
+Route::get('checkout-coach', [PageController::class, 'checkout_coach'])->name('checkout_coach');
+Route::get('checkout-coachee', [PageController::class, 'checkout_coachee'])->name('checkout_coachee');
