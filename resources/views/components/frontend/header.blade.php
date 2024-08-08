@@ -85,7 +85,7 @@
                     <a href="{{ route('checkout_coachee') }}" class="dropdown-item">Checkout Coachee</a>
                   </li>
                   <li>
-                    <a href="{{ route('profil_coachee') }}" class="dropdown-item">Profil Coachee</a>
+                    <a href="/profil-coachee-buchungen.html" class="dropdown-item">Profil Coachee</a>
                   </li>
                 </ul>
               </li>

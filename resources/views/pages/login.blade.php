@@ -13,7 +13,7 @@
                         <div class="mb-4 w-100">
                             <div class="d-flex align-items-center justify-content-between mb-2">
                                 <label class="form-label mb-0" for="signin-password">Passwort</label><a class="fs-sm"
-                                    href="/passwort-zuruecksetzen.html">Passwort vergessen?</a>
+                                    href="{{ route('forgot_password') }}">Passwort vergessen?</a>
                             </div>
                             <div class="password-toggle">
                                 <input class="form-control" type="password" id="signin-password"
@@ -32,8 +32,8 @@
                 </form>
                 <div class="d-flex flex-wrap justify-content-between align-items-center">
                     <span>Sie haben noch kein Konto?
-                        <a href="/registrierung.html" title="Konto erstellen">Konto erstellen</a></span>
-                    <a href="/registrierung-coach.html" title="Als Coach registrieren"
+                        <a href="{{ route('registration') }}" title="Konto erstellen">Konto erstellen</a></span>
+                    <a href="{{ route('registration_coach') }}" title="Als Coach registrieren"
                         class="btn btn-gray-300 text-gray-800 btn-sm rounded-pill mt-3 mt-md-0">Als Coach
                         registrieren</a>
                 </div>

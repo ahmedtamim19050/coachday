@@ -10,6 +10,9 @@ class PageController extends Controller
     public function login(){
         return view('pages.login');
     }
+    public function forgot_password(){
+        return view('pages.forgot_password');
+    }
 
     public function registration(){
         return view('pages.registration');
@@ -22,8 +25,5 @@ class PageController extends Controller
     }
     public function checkout_coachee(){
         return view('pages.checkout_coachee');
-    }
-    public function profil_coachee(){
-        return view('pages.profil_coachee');
     }
 }
