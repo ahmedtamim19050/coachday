@@ -71,7 +71,7 @@
                 </form>
                 <div class="d-flex flex-wrap justify-content-between align-items-center mt-auto">
                     <span>Sie möchten Ihr Coaching anbieten?</span>
-                    <a href="/registrierung-coach.html" title="Als Coach registrieren"
+                    <a href="{{ route('registration_coach') }}" title="Als Coach registrieren"
                         class="btn btn-gray-300 text-gray-800 btn-sm rounded-pill mt-4 md-md-0 mb-4">Als Coach
                         registrieren</a>
                 </div>

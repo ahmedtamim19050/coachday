@@ -10,6 +10,9 @@ class PageController extends Controller
     public function login(){
         return view('pages.login');
     }
+    public function forgot_password(){
+        return view('pages.forgot_password');
+    }
 
     public function registration(){
         return view('pages.registration');
