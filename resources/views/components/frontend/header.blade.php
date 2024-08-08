@@ -69,13 +69,13 @@
                   </li>
                   <li class="dropdown-divider"></li>
                   <li>
-                    <a href="/login.html" class="dropdown-item">Login</a>
+                    <a href="{{ route('login') }}" class="dropdown-item">Login</a>
                   </li>
                   <li>
                     <a href="/registrierung-coach.html" class="dropdown-item">Registrierung Coach</a>
                   </li>
                   <li>
-                    <a href="/registrierung.html" class="dropdown-item">Registrierung</a>
+                    <a href="{{ route('registration') }}" class="dropdown-item">Registrierung</a>
                   </li>
                   
                   <li>
