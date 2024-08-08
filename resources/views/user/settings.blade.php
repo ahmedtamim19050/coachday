@@ -24,7 +24,7 @@
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="pe-2">
                                         <label class="form-label fw-bold text-dark">E-Mail</label>
-                                        <div id="email-value">maxim-mustermann@gmail.com</div>
+                                        <div id="email-value">{{auth()->user()->email}}</div>
                                     </div>
                                     <div data-bs-toggle="tooltip" title="Edit"><a class="nav-link py-0"
                                             href="#email-collapse" data-bs-toggle="collapse"><i class="fi-edit"></i></a>
@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="collapse" id="email-collapse" data-bs-parent="#auth-info">
                                     <input class="form-control input-editable mt-3" type="email" name="email"
-                                        value="maxim-mustermann@gmail.com" disabled>
+                                        value="{{auth()->user()->email}}" >
                                 </div>
                             </div>
                             <!-- Password-->
@@ -54,7 +54,7 @@
                                             <div class="password-toggle">
                                                 <input class="form-control input-editable input-editable" type="password"
                                                     id="account-password-current" name="current_password"
-                                                    placeholder="Aktuelles Passwort eingeben" disabled>
+                                                    placeholder="Aktuelles Passwort eingeben" >
                                                 <label class="password-toggle-btn"
                                                     aria-label="Passwort anzeigen/verstecken">
                                                     <input class="password-toggle-check" type="checkbox"><span
@@ -69,7 +69,7 @@
                                         <div class="col-sm-8 col-md-9">
                                             <div class="password-toggle">
                                                 <input class="form-control input-editable input-editable" name="new_password" type="password" id="account-password-new"
-                                                    placeholder="Neues Passwort eingeben " disabled>
+                                                    placeholder="Neues Passwort eingeben " >
                                                 <label class="password-toggle-btn"
                                                     aria-label="Passwort anzeigen/verstecken">
                                                     <input class="password-toggle-check" type="checkbox"><span
@@ -84,7 +84,7 @@
                                         <div class="col-sm-8 col-md-9">
                                             <div class="password-toggle">
                                                 <input class="form-control input-editable input-editable" type="password" name="confirm_password"
-                                                    id="account-password-confirm" placeholder="Passwort bestätigen" disabled>
+                                                    id="account-password-confirm" placeholder="Passwort bestätigen" >
                                                 <label class="password-toggle-btn"
                                                     aria-label="Passwort anzeigen/verstecken">
                                                     <input class="password-toggle-check" type="checkbox"><span
@@ -111,8 +111,8 @@
                                     <div class="pe-2">
                                         <label class="form-label fw-bold text-dark">Name</label>
                                         <div class="d-flex">
-                                            <div id="fn-value" class="me-2">Dr. Agathe Maria</div>
-                                            <div id="nn-value">Musterfrau</div>
+                                            <div id="fn-value" class="me-2">{{auth()->user()->f_name}}</div>
+                                            <div id="nn-value">{{auth()->user()->l_name}}</div>
                                         </div>
 
                                     </div>
@@ -122,12 +122,13 @@
                                 </div>
                                 <div class="collapse" id="fn-collapse" data-bs-parent="#personal-details">
                                     <div class="d-flex flex-column flex-sm-row">
-                                        <input class="form-control input-editable mt-3 me-2" type="email"
-                                            data-bs-binded-element="#fn-value" data-bs-unset-value="Leer"
-                                            placeholder="Vorname" name="f_name" disabled>
-                                        <input class="form-control input-editable mt-3" type="email"
-                                            data-bs-binded-element="#fn-value" name="l_name" data-bs-unset-value="Leer"
-                                            placeholder="Nachname" disabled>
+                                        <input class="form-control input-editable mt-3 me-2" type="text"
+                                            value="{{auth()->user()->f_name}}"
+                                            placeholder="Vorname" name="meta[f_name]" >
+                                        <input class="form-control input-editable mt-3" type="text"
+                                             name="meta[l_name]" 
+                                             value="{{auth()->user()->l_name}}"
+                                            placeholder="Nachname" >
                                     </div>
                                 </div>
                             </div>
@@ -137,18 +138,18 @@
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="pe-2">
                                         <label class="form-label fw-bold text-dark">Geschlecht</label>
-                                        <div id="gender-value">Weiblich</div>
+                                        <div id="gender-value">{{auth()->user()->gender}}</div>
                                     </div>
                                     <div data-bs-toggle="tooltip" title="Edit"><a class="nav-link py-0"
                                             href="#gender-collapse" data-bs-toggle="collapse"><i
                                                 class="fi-edit"></i></a></div>
                                 </div>
                                 <div class="collapse" id="gender-collapse" data-bs-parent="#personal-details">
-                                    <select class="form-select input-editable mt-3" name="gender" data-bs-binded-element="#gender-value" disabled>
+                                    <select class="form-select input-editable mt-3" name="meta[gender]" data-bs-binded-element="#gender-value" >
                                         <option value="" >Geschlecht wählen</option>
                                         <option value="Weiblich" selected>Weiblich</option>
-                                        <option value="Maennlich">Männlich</option>
-                                        <option value="Divers">Divers</option>
+                                        <option value="Maennlich" {{auth()->user()->gender=='Maennlich' ? 'selected' : ''}}>Männlich</option>
+                                        <option value="Divers" {{auth()->user()->gender=='Divers' ? 'selected' : ''}}>Divers</option>
                                     </select>
                                 </div>
                             </div>
@@ -157,7 +158,7 @@
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="pe-2">
                                         <label class="form-label fw-bold text-dark">Geburtsdatum</label>
-                                        <div id="birth-value">24.Juni.1992</div>
+                                        <div id="birth-value">{{auth()->user()->dob}}</div>
                                     </div>
                                     <div data-bs-toggle="tooltip" title="Edit"><a class="nav-link py-0"
                                             href="#birth-collapse" data-bs-toggle="collapse"><i
@@ -165,9 +166,10 @@
                                 </div>
                                 <div class="collapse" id="birth-collapse" data-bs-parent="#personal-details">
                                     <div class="input-group input-group-lg mt-3">
-                                        <input class="form-control input-editable date-picker rounded pe-5" name="dob" type="text"
+                                        <input class="form-control input-editable date-picker rounded pe-5" name="meta[dob]" type="text"
                                             id="pr-birth-date" placeholder="Datum wählen"
-                                            data-datepicker-options="{&quot;altInput&quot;: true, &quot;altFormat&quot;: &quot;j.F.Y&quot;, &quot;dateFormat&quot;: &quot;d-M-Y&quot;}" disabled><i
+                                            value="{{auth()->user()->dob}}"
+                                            data-datepicker-options="{&quot;altInput&quot;: true, &quot;altFormat&quot;: &quot;j.F.Y&quot;, &quot;dateFormat&quot;: &quot;d-M-Y&quot;}" ><i
                                             class="fi-calendar text-muted position-absolute top-50 end-0 translate-middle-y me-3" ></i>
                                     </div>
                                 </div>
@@ -177,16 +179,15 @@
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="pe-2">
                                         <label class="form-label fw-bold text-dark">Telefonnummer</label>
-                                        <div id="phone-value">017611122233</div>
+                                        <div id="phone-value">{{auth()->user()->phone}}</div>
                                     </div>
                                     <div data-bs-toggle="tooltip" title="Edit"><a class="nav-link py-0"
                                             href="#phone-collapse" data-bs-toggle="collapse"><i
                                                 class="fi-edit"></i></a></div>
                                 </div>
                                 <div class="collapse" id="phone-collapse" data-bs-parent="#personal-details">
-                                    <input class="form-control input-editable mt-3" type="text" name="phone"
-                                        data-bs-binded-element="#phone-value" data-bs-unset-value="Leer"
-                                        value="017611122233" disabled>
+                                    <input class="form-control input-editable mt-3" type="text" name="meta[phone]"
+                                        value="{{auth()->user()->phone}}" >
                                 </div>
                             </div>
                             <!-- Address-->
@@ -195,10 +196,10 @@
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="pe-2">
                                         <label class="form-label fw-bold text-dark">Adresse*</label>
-                                        <div id="address-value">Mustertstraße 123</div>
+                                        <div id="address-value">{{auth()->user()->house_number}}</div>
                                         <div class="d-flex">
-                                            <div id="plz-value" class="me-2">123456</div>
-                                            <div id="ort-value">Berlin</div>
+                                            <div id="plz-value" class="me-2">{{auth()->user()->post_code}}</div>
+                                            <div id="ort-value">{{auth()->user()->ort}}</div>
                                         </div>
 
                                     </div>
@@ -208,16 +209,16 @@
                                 </div>
                                 <div class="collapse" id="address-collapse" data-bs-parent="#personal-details">
 
-                                    <input class="form-control input-editable mt-3" type="text" name="house_number" 
-                                        placeholder="Straße & Hausnummer" disabled >
+                                    <input class="form-control input-editable mt-3" type="text" name="meta[house_number]" 
+                                        placeholder="Straße & Hausnummer"  value="{{auth()->user()->house_number}}">
 
                                     <div class="d-flex flex-column flex-sm-row">
                                         <input class="form-control input-editable mt-3 me-3" type="text"
-                                            name="post_code" 
-                                            placeholder="PLZ*" disabled>
+                                            name="meta[post_code]" 
+                                            placeholder="PLZ*"  value="{{auth()->user()->post_code}}">
                                         <input class="form-control input-editable mt-3" type="text"
-                                            data-bs-binded-element="#ort-value" name="ort" data-bs-unset-value="Leer"
-                                            placeholder="Ort*" disabled>
+                                            data-bs-binded-element="#ort-value" name="meta[ort]" 
+                                            placeholder="Ort*" value="{{auth()->user()->ort}}">
                                     </div>
 
 
@@ -229,14 +230,14 @@
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div class="pe-2">
                                         <label class="form-label fw-bold text-dark">Firmenangaben</label>
-                                        <div id="firmname-value-firm">Muster GmbH</div>
-                                        <div id="address-value-firm">Mustertstraße 123</div>
+                                        <div id="firmname-value-firm">{{auth()->user()->company_name}}</div>
+                                        <div id="address-value-firm">{{auth()->user()->compay_street}}</div>
                                         <div class="d-flex">
-                                            <div id="plz-value-firm" class="me-2">123456</div>
-                                            <div id="ort-value-firm">Berlin</div>
+                                            <div id="plz-value-firm" class="me-2">{{auth()->user()->company_post_code}}</div>
+                                            <div id="ort-value-firm">{{auth()->user()->company_ort}}</div>
                                         </div>
-                                        <div id="ustidentnr-value-firm">DE21123456</div>
-                                        <div id="stnr-value-firm">123125124</div>
+                                        <div id="ustidentnr-value-firm">{{auth()->user()->vat}}</div>
+                                        <div id="stnr-value-firm">{{auth()->user()->tax}}</div>
 
                                     </div>
                                     <div data-bs-toggle="tooltip" title="Edit"><a class="nav-link py-0"
@@ -245,30 +246,29 @@
                                 </div>
                                 <div class="collapse" id="firm-collapse" data-bs-parent="#personal-details">
 
-                                    <input class="form-control input-editable mt-3" type="text"
+                                    <input class="form-control input-editable mt-3" type="text" name="meta[company_name]"
                                         data-bs-binded-element="#firmname-value-firm" data-bs-unset-value="Leer"
-                                        placeholder="Firmenname">
+                                        placeholder="Firmenname" value="{{auth()->user()->company_name}}">
 
                                     <input class="form-control input-editable mt-3" type="text"
-                                        data-bs-binded-element="#address-value-firm" data-bs-unset-value="Leer"
-                                        placeholder="Straße & Hausnummer">
+                                       value="{{auth()->user()->compay_street}}"
+                                        placeholder="Straße & Hausnummer" name="meta[compay_street]" >
 
                                     <div class="d-flex flex-column flex-sm-row">
                                         <input class="form-control input-editable mt-3 me-3" type="text"
-                                            data-bs-binded-element="#plz-value-firm" data-bs-unset-value="Leer"
-                                            placeholder="PLZ">
+                                            placeholder="PLZ" name="meta[company_post_code]" value="{{auth()->user()->company_post_code}}">
                                         <input class="form-control input-editable mt-3" type="text"
-                                            data-bs-binded-element="#ort-value-firm" data-bs-unset-value="Leer"
-                                            placeholder="Ort">
+                                        value="{{auth()->user()->company_ort}}"
+                                            placeholder="Ort" name="meta[company_ort]" >
                                     </div>
 
                                     <div class="d-flex flex-column flex-sm-row">
                                         <input class="form-control input-editable mt-3 me-3" type="text"
-                                            data-bs-binded-element="#ustidentnr-value-firm" data-bs-unset-value="Leer"
-                                            placeholder="Umsatzsteuer-Identifikationsnummer">
+                                        value="{{auth()->user()->vat}}"
+                                            placeholder="Umsatzsteuer-Identifikationsnummer" name="meta[vat]" >
                                         <input class="form-control input-editable mt-3" type="text"
-                                            data-bs-binded-element="#stnr-value-firm" data-bs-unset-value="Leer"
-                                            placeholder="Steuernummer">
+                                            value="{{auth()->user()->tax}}"
+                                            placeholder="Steuernummer" name="meta[tax]" >
                                     </div>
                                 </div>
                             </div>
@@ -290,7 +290,7 @@
                                     <div class="pe-2">
                                         <label class="form-label fw-bold text-dark">Name</label>
                                         <div class="d-flex">
-                                            <div id="fnpayment-value" class="me-2">Dr. Agathe Maria</div>
+                                            <div id="fnpayment-value" class="me-2">{{auth()->user()->payment_f_name}}</div>
                                             <div id="nnpayment-value">Musterfrau</div>
                                         </div>
 
@@ -301,12 +301,12 @@
                                 </div>
                                 <div class="collapse" id="fnpayment-collapse" data-bs-parent="#personal-details">
                                     <div class="d-flex flex-column flex-sm-row">
-                                        <input class="form-control input-editable mt-3 me-2" type="email"
-                                            data-bs-binded-element="#fnpayment-value" name="payment_f_name" data-bs-unset-value="Leer"
-                                            placeholder="Vorname" disabled>
-                                        <input class="form-control input-editable mt-3" type="email"
+                                        <input class="form-control input-editable mt-3 me-2" type="text"
+                                            value ="{{auth()->user()->payment_f_name}}" name="payment_f_name" 
+                                            placeholder="Vorname" >
+                                        <input class="form-control input-editable mt-3" type="text"
                                             data-bs-binded-element="#fnpayment-value" name="payment_l_name" data-bs-unset-value="Leer"
-                                            placeholder="Nachname" disabled>
+                                            placeholder="Nachname" >
                                     </div>
                                 </div>
                             </div>
@@ -504,7 +504,7 @@
     </section>
 
     @push('css')
-    <script>
+    {{-- <script>
      document.addEventListener('DOMContentLoaded', function () {
         // Function to toggle input fields within a collapse section
         function toggleInputs(collapseId) {
@@ -513,13 +513,13 @@
 
             collapseElement.addEventListener('show.bs.collapse', function () {
                 inputElements.forEach(function (input) {
-                    input.disabled = false;
+                    input. = false;
                 });
             });
 
             collapseElement.addEventListener('hide.bs.collapse', function () {
                 inputElements.forEach(function (input) {
-                    input.disabled = true;
+                    input. = true;
                 });
             });
         }
@@ -533,7 +533,8 @@
         toggleInputs('phone-collapse');
         toggleInputs('address-collapse');
         toggleInputs('fnpayment-collapse');
+        toggleInputs('firm-collapse');
     });
-    </script>
+    </script> --}}
     @endpush
 </x-user.app>
