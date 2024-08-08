@@ -14,13 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[PageController::class,'home'])->name('home');
-Route::get('/coach-suchen',[PageController::class,'findCoach'])->name('find.coach');
-Route::get('/coach-werden',[PageController::class,'becomeCoach'])->name('become.coach');
-Route::get('/magazin',[PageController::class,'posts'])->name('posts')->middleware('role:2');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
-
-require('alamin.php');
+Route::get('',function(){
+    dd('admin');
+});
