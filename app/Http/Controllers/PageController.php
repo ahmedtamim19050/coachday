@@ -14,4 +14,12 @@ class PageController extends Controller
     {
         return view('pages.find_coach');
     }
+    public function becomeCoach()
+    {
+        return view('pages.become_coach');
+    }
+    public function posts()
+    {
+        return view('pages.posts');
+    }
 }

@@ -2454,9 +2454,9 @@
                             </button>
                         </div>
                         <div class="tns-carousel-inner">
-                            <picture><source srcset="./img/sample-images/image.webp" type="image/webp"><img src="./img/sample-images/image.jpg" alt="Image" /></picture>
-                            <picture><source srcset="./img/sample-images/image2.webp" type="image/webp"><img src="./img/sample-images/image2.png" alt="Image" /></picture>
-                            <picture><source srcset="./img/sample-images/image3.webp" type="image/webp"><img src="./img/sample-images/image3.png" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image.jpg')}}" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image2.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image2.png')}}" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image3.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image3.png')}}" alt="Image" /></picture>
                         </div>
                     </div>
                     <div class="position-relative pb-2">
@@ -2520,9 +2520,9 @@
                             </button>
                         </div>
                         <div class="tns-carousel-inner">
-                            <picture><source srcset="./img/sample-images/image.webp" type="image/webp"><img src="./img/sample-images/image.jpg" alt="Image" /></picture>
-                            <picture><source srcset="./img/sample-images/image2.webp" type="image/webp"><img src="./img/sample-images/image2.png" alt="Image" /></picture>
-                            <picture><source srcset="./img/sample-images/image3.webp" type="image/webp"><img src="./img/sample-images/image3.png" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image.jpg')}}" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image2.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image2.png')}}" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image3.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image3.png')}}" alt="Image" /></picture>
                         </div>
                     </div>
                     <div class="position-relative pb-2">
@@ -2585,9 +2585,9 @@
                             </button>
                         </div>
                         <div class="tns-carousel-inner">
-                            <picture><source srcset="./img/sample-images/image.webp" type="image/webp"><img src="./img/sample-images/image.jpg" alt="Image" /></picture>
-                            <picture><source srcset="./img/sample-images/image2.webp" type="image/webp"><img src="./img/sample-images/image2.png" alt="Image" /></picture>
-                            <picture><source srcset="./img/sample-images/image3.webp" type="image/webp"><img src="./img/sample-images/image3.png" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image.jpg')}}" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image2.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image2.png')}}" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image3.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image3.png')}}" alt="Image" /></picture>
                         </div>
                     </div>
                     <div class="position-relative pb-2">
@@ -2650,9 +2650,9 @@
                             </button>
                         </div>
                         <div class="tns-carousel-inner">
-                            <picture><source srcset="./img/sample-images/image.webp" type="image/webp"><img src="./img/sample-images/image.jpg" alt="Image" /></picture>
-                            <picture><source srcset="./img/sample-images/image2.webp" type="image/webp"><img src="./img/sample-images/image2.png" alt="Image" /></picture>
-                            <picture><source srcset="./img/sample-images/image3.webp" type="image/webp"><img src="./img/sample-images/image3.png" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image.jpg')}}" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image2.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image2.png')}}" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image3.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image3.png')}}" alt="Image" /></picture>
                         </div>
                     </div>
                     <div class="position-relative pb-2">
@@ -2716,9 +2716,9 @@
                             </button>
                         </div>
                         <div class="tns-carousel-inner">
-                            <picture><source srcset="./img/sample-images/image.webp" type="image/webp"><img src="./img/sample-images/image.jpg" alt="Image" /></picture>
-                            <picture><source srcset="./img/sample-images/image2.webp" type="image/webp"><img src="./img/sample-images/image2.png" alt="Image" /></picture>
-                            <picture><source srcset="./img/sample-images/image3.webp" type="image/webp"><img src="./img/sample-images/image3.png" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image.jpg')}}" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image2.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image2.png')}}" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image3.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image3.png')}}" alt="Image" /></picture>
                         </div>
                     </div>
                     <div class="position-relative pb-2">
@@ -2781,9 +2781,9 @@
                             </button>
                         </div>
                         <div class="tns-carousel-inner">
-                            <picture><source srcset="./img/sample-images/image.webp" type="image/webp"><img src="./img/sample-images/image.jpg" alt="Image" /></picture>
-                            <picture><source srcset="./img/sample-images/image2.webp" type="image/webp"><img src="./img/sample-images/image2.png" alt="Image" /></picture>
-                            <picture><source srcset="./img/sample-images/image3.webp" type="image/webp"><img src="./img/sample-images/image3.png" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image.jpg')}}" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image2.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image2.png')}}" alt="Image" /></picture>
+                            <picture><source srcset="{{asset('frontend-assets/img/sample-images/image3.webp')}}" type="image/webp"><img src="{{asset('frontend-assets/img/sample-images/image3.png')}}" alt="Image" /></picture>
                         </div>
                     </div>
                     <div class="position-relative pb-2">
@@ -2850,7 +2850,7 @@
             <div class="row bg-accent rounded-md text-white w-md-100">
                 <div class="col-12 text-center d-block d-lg-none">
                     <img
-                        src="./img/front-page/coachday-illu-1.png"
+                        src="{{asset('frontend-assets/img/front-page/coachday-illu-1.png')}}"
                         width="459"
                         height="484"
                         class="img-fluid"
@@ -2877,7 +2877,7 @@
                 </div>
             </div>
             <img
-                src="./img/front-page/coachday-illu-1.png"
+                src="{{asset('frontend-assets/img/front-page/coachday-illu-1.png')}}"
                 width="462"
                 class="img-fluid coach-werden-image"
                 alt="Image"
