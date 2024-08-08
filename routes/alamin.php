@@ -18,7 +18,6 @@ Route::get('test',function(){
     dd('alamin');
 });
 
-Route::get('login', [PageController::class, 'login'])->name('login');
 Route::get('registrierung', [PageController::class, 'registration'])->name('registration');
 Route::get('registrierung-coach', [PageController::class, 'registration_coach'])->name('registration_coach');
 Route::get('checkout-coach', [PageController::class, 'checkout_coach'])->name('checkout_coach');

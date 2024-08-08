@@ -1,4 +1,12 @@
 <x-frontend.app>
+
+    @push('css')
+       <style>
+        .invalid-feedback{
+            display: block;
+        }
+       </style>
+    @endpush
     <section class="container mb-5 pb-md-5 mt-4 mt-md-5">
         <div class="row">
             <div class="col-lg-5 order-2 order-lg-1">

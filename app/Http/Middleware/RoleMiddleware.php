@@ -13,10 +13,19 @@ class RoleMiddleware
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
+    protected const ROLES = [
+        'admin' => 1,
+        'user' => 2,
+        'seller' => 3,
+    ];
+
     public function handle(Request $request, Closure $next,$role): Response
     { 
-        dd($role);
+    //    dd(auth()->user());
         
-        return $next($request);
+        if (self::ROLES[$role] == auth()->user()->role_id) {
+            return $next($request);
+        }
+        return abort('403', 'Zugriff verboten');
     }
 }

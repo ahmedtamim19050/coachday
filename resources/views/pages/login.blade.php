@@ -1,14 +1,29 @@
 <x-frontend.app>
+    @push('css')
+        <style>
+            .invalid-feedback {
+                display: block;
+            }
+        </style>
+    @endpush
     <section class="container mb-5 pb-md-5 mt-4 mt-md-5">
         <div class="row">
             <div class="col-lg-6 order-2 order-lg-1">
                 <h1 class="mb-4">Willkommen bei Coachday!</h1>
-                <form class="needs-validation mb-md-5" novalidate="">
+                <form class="needs-validation mb-md-5" novalidate="" action="{{ route('login') }}" method="post">
+                    @csrf
                     <div class="d-flex flex-column flex-sm-row justify-content-start gap-2">
                         <div class="mb-4 w-100">
                             <label class="form-label mb-2" for="signin-email">E-Mail Adresse</label>
-                            <input class="form-control" type="email" id="signin-email"
-                                placeholder="Geben sie ihre E-Mail Adresse ein" required="" />
+                            <input class="form-control @error('email') is-invalid @enderror" type="email"
+                                name="email" id="eamil" placeholder="Geben sie ihre E-Mail Adresse ein"
+                                required="" value="{{ old('email') }}" />
+
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="mb-4 w-100">
                             <div class="d-flex align-items-center justify-content-between mb-2">
@@ -16,8 +31,15 @@
                                     href="/passwort-zuruecksetzen.html">Passwort vergessen?</a>
                             </div>
                             <div class="password-toggle">
-                                <input class="form-control" type="password" id="signin-password"
-                                    placeholder="Geben sie ihr Passwort ein" required="" />
+                                <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                    name="password" id="password" placeholder="Geben sie ihr Passwort ein"
+                                    required="" />
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 <label class="password-toggle-btn" aria-label="Passwort anzeigen/verstecken">
                                     <input class="password-toggle-check" type="checkbox" /><span
                                         class="password-toggle-indicator"></span>
@@ -39,7 +61,8 @@
                 </div>
             </div>
             <div class="col-lg-5 offset-lg-1 order-1 order-lg-2 mb-3 mb-lg-0 login-intro-image">
-                <img src="{{asset('frontend-assets/img/register-login/login-illu.png')}}" class="img-fluid rounded" alt="Willkommen bei Coachday" />
+                <img src="{{ asset('frontend-assets/img/register-login/login-illu.png') }}" class="img-fluid rounded"
+                    alt="Willkommen bei Coachday" />
             </div>
         </div>
     </section>

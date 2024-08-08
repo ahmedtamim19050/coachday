@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\User\PageController as UserPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('',function(){
-    dd('user');
+
+
+
+Route::group(['prefix' => 'profil-coachee/','middleware' => ['auth', 'role:user'],'as'=>'user.'], function () {
+    Route::get('/buchungen',[UserPageController::class,'dashboard'])->name('dashboard');
+    Route::get('/einstellungen',[UserPageController::class,'settings'])->name('settings');
+    Route::post('/einstellungen',[UserPageController::class,'settingsUpdate'])->name('settings.update');
 });

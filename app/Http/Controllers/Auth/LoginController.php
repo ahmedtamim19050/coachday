@@ -28,7 +28,7 @@ class LoginController extends Controller
      */
     public function redirectTo()
     {
-
+     
         switch (auth()->user()->role_id) {
             case 1:
                 return RouteServiceProvider::ADMIN;
@@ -45,6 +45,7 @@ class LoginController extends Controller
                 break;
         }
     }
+ 
 
     /**
      * Create a new controller instance.
