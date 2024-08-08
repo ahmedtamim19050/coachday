@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +29,28 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    public function redirectTo()
+    {
+
+        switch (auth()->user()->role_id) {
+            case 1:
+                return RouteServiceProvider::ADMIN;
+                break;
+            case 2:
+                return RouteServiceProvider::USER;
+                break;
+
+            case 3:
+                return RouteServiceProvider::COACH;
+                break;
+
+         
+
+            default:
+                return RouteServiceProvider::HOME;
+                break;
+        }
+    }
 
     /**
      * Create a new controller instance.
