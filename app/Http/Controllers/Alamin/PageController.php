@@ -23,4 +23,7 @@ class PageController extends Controller
     public function checkout_coachee(){
         return view('pages.checkout_coachee');
     }
+    public function profil_coachee(){
+        return view('pages.profil_coachee');
+    }
 }

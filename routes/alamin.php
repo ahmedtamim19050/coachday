@@ -23,3 +23,4 @@ Route::get('registrierung', [PageController::class, 'registration'])->name('regi
 Route::get('registrierung-coach', [PageController::class, 'registration_coach'])->name('registration_coach');
 Route::get('checkout-coach', [PageController::class, 'checkout_coach'])->name('checkout_coach');
 Route::get('checkout-coachee', [PageController::class, 'checkout_coachee'])->name('checkout_coachee');
+Route::get('profil-coachee-buchungen', [PageController::class, 'profil_coachee'])->name('profil_coachee');
