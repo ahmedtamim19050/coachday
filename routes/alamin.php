@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PageController;
+use App\Http\Controllers\Alamin\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('test',function(){
     dd('alamin');
 });
+
+Route::get('login', [PageController::class, 'login'])->name('login');
+Route::get('registrierung', [PageController::class, 'registration'])->name('registration');
