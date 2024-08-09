@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PageController;
+use App\Http\Controllers\Coach\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',function(){
-    dd('coach');
+Route::group(['prefix' => 'coaching-profil', 'middleware' => ['auth', 'role:coach'], 'as' => 'coach.'], function () {
+    Route::get('/bearbeiten', [PageController::class, 'coach'])->name('coach');
 });

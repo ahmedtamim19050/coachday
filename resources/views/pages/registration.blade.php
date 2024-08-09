@@ -29,7 +29,7 @@
                                 type="email" id="email" value="{{old('email')}}" placeholder="Geben sie ihre E-Mail Adresse ein"
                                  required />
 
-                            @error('eamil')
+                            @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

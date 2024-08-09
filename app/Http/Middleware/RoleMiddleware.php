@@ -16,7 +16,7 @@ class RoleMiddleware
     protected const ROLES = [
         'admin' => 1,
         'user' => 2,
-        'seller' => 3,
+        'coach' => 3,
     ];
 
     public function handle(Request $request, Closure $next,$role): Response

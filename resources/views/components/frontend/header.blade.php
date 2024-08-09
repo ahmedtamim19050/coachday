@@ -75,7 +75,7 @@
                     <a href="{{ route('registration_coach') }}" class="dropdown-item">Registrierung Coach</a>
                   </li>
                   <li>
-                    <a href="{{ route('registration') }}" class="dropdown-item">Registrierung</a>
+                    <a href="{{ route('register.form') }}" class="dropdown-item">Registrierung</a>
                   </li>
                   
                   <li>

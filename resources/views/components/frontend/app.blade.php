@@ -76,10 +76,11 @@
  -->
     <script src="{{ asset('frontend-assets/files/boxicons/dist/boxicons.js?_v=20240806170230') }}"></script>
     <!-- Main theme script-->
+    @stack('js')
     <script src="{{ asset('frontend-assets/js/app.min.js?_v=20240806170230') }}"></script>
+    
     <script src="{{ asset('frontend-assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('frontend-assets/js/toastr.min.js') }}"></script>
-    @stack('scripts')
     @if (session()->has('errors'))
         <script>
             @foreach ($errors->all() as $error)
@@ -92,7 +93,7 @@
             toastr.success("{{ session('success') }}")
         </script>
     @endif
-    @stack('js')
+
 
 </body>
 

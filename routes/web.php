@@ -25,3 +25,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 require('alamin.php');
 require('user.php');
+require('coach.php');

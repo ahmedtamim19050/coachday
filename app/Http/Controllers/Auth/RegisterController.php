@@ -72,10 +72,21 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
             'role'=>'required',
-        ]);
+        ])
+        ->sometimes('meta.f_name', 'required', function ($input) {
+            return $input->role === 'coach';
+        })
+        ->sometimes('meta.l_name', 'required', function ($input) {
+            return $input->role === 'coach';
+        })
+        ->sometimes('email', 'required | string | email | max:255 |unique:users| confirmed ', function ($input) {
+            return $input->role === 'coach';
+        })
+        ->sometimes('email', 'required | string | email | max:255 |unique:users ', function ($input) {
+            return $input->role === 'user';
+        });
     }
 
     /**
@@ -87,11 +98,14 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $role=Role::where('name',$data['role'])->first();
-
-        return User::create([
+        $user= User::create([
             'email' => $data['email'],
             'role_id'=>$role->id,
             'password' => Hash::make($data['password']),
         ]);
+        if($data['meta']){
+            $user->createMetas($data['meta']);
+        }
+        return $user;
     }
 }
