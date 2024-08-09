@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('image')->nullable();
             $table->string('job_title')->nullable();
-            $table->string('coaching_format')->nullable();
+            $table->json('coaching_format')->nullable();
             $table->json('languages')->nullable();
             $table->json('expriences')->nullable();
             $table->json('regions')->nullable();

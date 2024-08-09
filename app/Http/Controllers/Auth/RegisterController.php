@@ -85,6 +85,7 @@ class RegisterController extends Controller
             return $input->role === 'coach';
         })
         ->sometimes('email', 'required | string | email | max:255 |unique:users ', function ($input) {
+           
             return $input->role === 'user';
         });
     }

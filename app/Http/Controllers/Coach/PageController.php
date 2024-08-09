@@ -10,7 +10,5 @@ class PageController extends Controller
     public function coach() {
         return view('coach.coach_create');
     }
-    public function update_or_store(Request $request)  {
-        dd($request->all());
-    }
+ 
 }

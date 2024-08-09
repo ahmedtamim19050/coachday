@@ -63,4 +63,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function coach() {
+        return $this->hasOne(Coach::class,'user_id');
+    }
 }
