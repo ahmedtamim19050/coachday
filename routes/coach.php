@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'coaching-profil', 'middleware' => ['auth', 'role:coach'], 'as' => 'coach.'], function () {
     Route::get('/bearbeiten', [PageController::class, 'coach'])->name('coach');
+    Route::post('/update_or_store', [PageController::class, 'update_or_store'])->name('update_or_store');
 });

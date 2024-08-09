@@ -46,8 +46,8 @@
         </div>
 
         <form class="bg-light shadow-sm rounded-3 px-3 px-md-4 py-md-5 py-4 multi-step-form" data-multi-step
-            method="post" action="/">
-
+            method="post" action="{{route('coach.update_or_store')}}">
+            @csrf
             <div class="step-form" data-step>
                 <h2 class="h4 mb-4">Über mich</h2>
 
@@ -387,7 +387,7 @@
                                 <div class="mb-4 d-flex align-items-center">
                                     <i class="fi-check-circle me-2 text-accent"></i>
 
-                                    <input class="form-control" type="text" name="subject_area[]"
+                                    <input class="form-control" type="text" name="service_areas[]"
                                         placeholder="Themengebiet">
                                     <div class="text-danger error-message"></div>
                                 </div>
@@ -396,7 +396,7 @@
                             <div class="col-md-6 multirow-in-form">
                                 <div class="mb-4 d-flex align-items-center">
                                     <i class="fi-check-circle me-2 text-accent"></i>
-                                    <input class="form-control" type="text" name="subject_area[]"
+                                    <input class="form-control" type="text" name="service_areas[]"
                                         placeholder="Themengebiet">
                                     <div class="text-danger error-message"></div>
                                 </div>
@@ -405,7 +405,7 @@
                             <div class="col-md-6 multirow-in-form">
                                 <div class="mb-4 d-flex align-items-center">
                                     <i class="fi-check-circle me-2 text-accent"></i>
-                                    <input class="form-control" type="text" name="subject_area[]"
+                                    <input class="form-control" type="text" name="service_areas[]"
                                         placeholder="Themengebiet">
                                     <div class="text-danger error-message"></div>
                                 </div>
@@ -428,7 +428,7 @@
                                         </div>
                                     </div>
 
-                                    <input class="form-control" type="text" name="subject_area[]"
+                                    <input class="form-control" type="text" name="service_areas[]"
                                         placeholder="Themengebiet" disabled>
                                     <div class="text-danger error-message"></div>
                                 </div>
@@ -450,7 +450,7 @@
                                                 newRow.innerHTML = `
                                                         <div class="mb-4 d-flex align-items-center">
                                                             <i class="fi-check-circle me-2 text-accent"></i>
-                                                            <input class="form-control" name="subject_area[]" type="text" placeholder="Themengebiet">
+                                                            <input class="form-control" name="service_areas[]" type="text" placeholder="Themengebiet">
                                                             <div class="text-danger error-message"></div>
                                                             <button type="button" class="btn text-primary rounded-circle px-0 delete-row-button ms-2" style="aspect-ratio:1/1;">
                                                             <i class="fi-x fs-sm m-0"></i>
@@ -493,7 +493,7 @@
                     <div class="col-12">
                         <div class="mb-4">
                             <label for="zielgruppeBranchen" class="form-label fw-bold">Zielgruppe | Branchen</label>
-                            <textarea class="form-control word-count-field" placeholder="Text schreiben…" id="industries" name="zielgruppe"
+                            <textarea class="form-control word-count-field" placeholder="Text schreiben…" id="zielgruppe" name="industries"
                                 rows="5"></textarea>
                             <div class="text-danger error-message"></div>
                         </div>
@@ -502,8 +502,8 @@
                     <div class="col-12 ">
                         <div class="mb-4">
                             <label for="zielgruppeBranchen" class="form-label fw-bold">Coaching Methoden</label>
-                            <textarea class="form-control word-count-field" placeholder="Text schreiben…" id="methods"
-                                name="methodenBeschreibung" rows="5"></textarea>
+                            <textarea class="form-control word-count-field" placeholder="Text schreiben…" id="methodenBeschreibung"
+                                name="coaching_methods" rows="5"></textarea>
                             <div class="text-danger error-message"></div>
                         </div>
 
@@ -514,7 +514,7 @@
                                 <div class="col-md-6 multirow-in-form">
                                     <div class="mb-4 d-flex align-items-center">
                                         <i class="bx bx-right-arrow-alt me-2 text-accent"></i>
-                                        <input class="form-control" name="method[]" type="text"
+                                        <input class="form-control" name="methods[]" type="text"
                                             placeholder="Methode">
                                         <div class="text-danger error-message"></div>
                                     </div>
@@ -1093,7 +1093,7 @@
                     <div class="col-md-6">
                         <div class="mb-4 d-flex align-items-center">
                             <i class="fi-phone me-2 text-accent"></i>
-                            <input class="form-control" type="tel" name="telefon" placeholder="Telefon">
+                            <input class="form-control" type="tel" name="phone" placeholder="Telefon">
                             <div class="text-danger error-message"></div>
                         </div>
                     </div>
@@ -1111,7 +1111,7 @@
                     <div class="col-md-6">
                         <div class="mb-4 d-flex align-items-center">
                             <i class="fi-map-pin me-2 text-accent"></i>
-                            <input class="form-control" type="text" name="anschrift" placeholder="Anschrift">
+                            <input class="form-control" type="text" name="address" placeholder="Anschrift">
                             <div class="text-danger error-message"></div>
                         </div>
                     </div>
@@ -1125,7 +1125,7 @@
                             <div class="col-md-6 multirow-in-form">
                                 <div class="mb-4 d-flex align-items-center">
                                     <i class="fi-globe me-2 text-accent"></i>
-                                    <input class="form-control" type="url" name="webseite"
+                                    <input class="form-control" type="url" name="meta[webseite]"
                                         placeholder="Webseite">
                                     <div class="text-danger error-message"></div>
                                 </div>
@@ -1133,7 +1133,7 @@
                             <div class="col-md-6 multirow-in-form">
                                 <div class="mb-4 d-flex align-items-center">
                                     <i class="fi-linkedin me-2 text-accent"></i>
-                                    <input class="form-control" type="url" name="linkedin"
+                                    <input class="form-control" type="url" name="meta[linkedin]"
                                         placeholder="LinkedIn">
                                     <div class="text-danger error-message"></div>
                                 </div>
@@ -1141,7 +1141,7 @@
                             <div class="col-md-6 multirow-in-form">
                                 <div class="mb-4 d-flex align-items-center">
                                     <i class="fi-facebook me-2 text-accent"></i>
-                                    <input class="form-control" type="url" name="facebook"
+                                    <input class="form-control" type="url" name="meta[facebook]"
                                         placeholder="Facebook">
                                     <div class="text-danger error-message"></div>
                                 </div>
@@ -1149,7 +1149,7 @@
                             <div class="col-md-6 multirow-in-form">
                                 <div class="mb-4 d-flex align-items-center">
                                     <i class="fi-instagram me-2 text-accent"></i>
-                                    <input class="form-control" type="url" name="instagram"
+                                    <input class="form-control" type="url" name="meta[instagram]"
                                         placeholder="Instagram">
                                     <div class="text-danger error-message"></div>
                                 </div>
@@ -1157,7 +1157,7 @@
                             <div class="col-md-6 multirow-in-form">
                                 <div class="mb-4 d-flex align-items-center">
                                     <i class="fi-medium me-2 text-accent"></i>
-                                    <input class="form-control" type="url" name="medium"
+                                    <input class="form-control" type="url" name="meta[medium]"
                                         placeholder="Medium">
                                     <div class="text-danger error-message"></div>
                                 </div>
@@ -1165,7 +1165,7 @@
                             <div class="col-md-6 multirow-in-form">
                                 <div class="mb-4 d-flex align-items-center">
                                     <i class="fi-telegram me-2 text-accent"></i>
-                                    <input class="form-control" type="url" name="telegram"
+                                    <input class="form-control" type="url" name="meta[telegram]"
                                         placeholder="Telegram">
                                     <div class="text-danger error-message"></div>
                                 </div>
@@ -1173,7 +1173,7 @@
                             <div class="col-md-6 multirow-in-form">
                                 <div class="mb-4 d-flex align-items-center">
                                     <i class="fi-tiktok me-2 text-accent"></i>
-                                    <input class="form-control" type="url" name="tiktok"
+                                    <input class="form-control" type="url" name="meta[tiktok]"
                                         placeholder="TikTok">
                                     <div class="text-danger error-message"></div>
                                 </div>
@@ -1181,7 +1181,7 @@
                             <div class="col-md-6 multirow-in-form">
                                 <div class="mb-4 d-flex align-items-center">
                                     <i class="fi-xing me-2 text-accent"></i>
-                                    <input class="form-control" type="url" name="xing"
+                                    <input class="form-control" type="url" name="[xing]"
                                         placeholder="Xing">
                                     <div class="text-danger error-message"></div>
                                 </div>
@@ -1189,7 +1189,7 @@
                             <div class="col-md-6 multirow-in-form">
                                 <div class="mb-4 d-flex align-items-center">
                                     <i class="fi-youtube me-2 text-accent"></i>
-                                    <input class="form-control" type="url" name="youtube"
+                                    <input class="form-control" type="url" name="meta[youtube]"
                                         placeholder="Youtube">
                                     <div class="text-danger error-message"></div>
                                 </div>
@@ -1209,7 +1209,7 @@
                                                 newRow.innerHTML = `
                                                     <div class="mb-4 d-flex align-items-center">
                                                         <i class="fi-plus-circle me-2 text-accent"></i>
-                                                        <input class="form-control" type="text" placeholder="Kontaktinformation">
+                                                        <input class="form-control" type="text" placeholder="Kontaktinformation" name="meta[other][]">
                                                         <div class="text-danger error-message"></div>
                                                         <button type="button" class="btn text-primary rounded-circle px-0 delete-row-button ms-2" style="aspect-ratio:1/1;">
                                                             <i class="fi-x fs-sm m-0"></i>

@@ -13,24 +13,25 @@ return new class extends Migration
     {
         Schema::create('coaches', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('image');
-            $table->string('job_title');
-            $table->string('coaching_format');
-            $table->string('language');
-            $table->string('exprience');
-            $table->string('region');
-            $table->string('about');
-            $table->json('subjects');
-            $table->text('industries');
-            $table->text('coaching_methods');
-            $table->json('methods');
-            $table->json('degrees');
-            $table->json('education_exprience');
-            $table->json('references');
-            $table->string('phone');
-            $table->string('email');
-            $table->string('address');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->string('name')->nullable();
+            $table->string('image')->nullable();
+            $table->string('job_title')->nullable();
+            $table->string('coaching_format')->nullable();
+            $table->json('languages')->nullable();
+            $table->json('expriences')->nullable();
+            $table->json('regions')->nullable();
+            $table->string('about')->nullable();
+            $table->json('service_areas')->nullable();
+            $table->text('industries')->nullable();
+            $table->text('coaching_methods')->nullable();
+            $table->json('methods')->nullable();
+            $table->json('degrees')->nullable();
+            $table->json('education_exprience')->nullable();
+            $table->json('references')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('address')->nullable();
             $table->timestamps();
         });
     }
